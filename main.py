@@ -181,6 +181,7 @@ class XML:
 					reason='wrong_condition_value',
 					extra_value=value,
 				)
+				
 	def _checkRequiredColumns(self, column_name=None):
 		"""
 		Method that checks if the column is one of the required columns. If so,
