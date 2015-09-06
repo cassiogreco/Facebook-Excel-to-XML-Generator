@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import xlutil, sys
 from lxml import etree
@@ -169,13 +169,13 @@ class XML:
 		if column is None or column == '' or column == ' ' or \
 			value is None or value == '' or value == ' ':
 			self._returnToUser(reason='missing_fields')
-		if column == 'availability':
+		if column == self.REQUIRED_COLUMNS['availability']:
 			if value not in self.VALID_AVAILABILITY_VALUES:
 				self._returnToUser(
 					reason='wrong_availability_value',
 				 	extra_value=value,
 				 )
-		if column == 'condition':
+		if column == self.REQUIRED_COLUMNS['condition']:
 			if value not in self.VALID_CONDITION_VALUES:
 				self._returnToUser(
 					reason='wrong_condition_value',
